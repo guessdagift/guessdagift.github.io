@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="script.js"></script>
+    <script>
+      function checkGuess(){
+  var userGuess = document.getElementByID("userGuess").value;
+  var correctAnswer = "the seeds of love";
+
+  if (userGuess === correctAnswer){
+    window.location.href = 'winner.html';
+  } else{
+    alert("Incorrect guess. Try again!");
+  }
+}
+    </script>
   </head>
   <body>
     <center>

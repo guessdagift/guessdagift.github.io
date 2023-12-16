@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      function checkGuess(){
-  var userGuess = document.getElementByID("userGuess").value;
-  var correctAnswer = "the seeds of love";
-
-  if (userGuess === correctAnswer){
-    window.location.href = 'winner.html';
-  } else{
-    alert("Incorrect guess. Try again!");
-  }
-}
-    </script>
+<tile>Guess the Gift Theme Game</tile>
+    <style>
+      .hidden {display:none;}
+    </style>
   </head>
   <body>
     <center>
+      <div id="game">
     <h1>Welcome to the Guess the Gift Game!</h1>
     <p>Make your guess:</p>
     <input type="text" id="userGuess">
     <button onclick="checkGuess()">Submit Your Guess</button>
+      </div>
+
+      <div id="winner" class="hidden">
+        <h1>Congratulations! You guessed correctly!</h1>
+        <audio controls>
+          <source src="t4f.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
     </center>
+        
+    <script>
+      function checkGuess(){
+          var userGuess = document.getElementByID("userGuess").value;
+          var correctAnswer = "the seeds of love";
+
+          if (userGuess === correctAnswer){
+            document.getElementById("game".classList.add("hidden");
+            document.getElementById("winner").classList.remove("hidden");
+          } else{
+            alert("Incorrect guess. Try again!");
+          }
+        }
+    </script>
   </body>
 </html>
